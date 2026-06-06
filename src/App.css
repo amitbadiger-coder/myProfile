@@ -1,0 +1,2 @@
+/* reset bootstrap interference */
+.App { background: var(--bg); min-height: 100vh; }

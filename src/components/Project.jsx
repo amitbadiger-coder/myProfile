@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Globe, X } from 'lucide-react';
+import { Github, Globe} from 'lucide-react';
 import aimock from '../assets/img/aimock.jpeg';
 import hotel from '../assets/img/hotel.jpeg';
 import voyage from '../assets/img/voyege.jpeg';

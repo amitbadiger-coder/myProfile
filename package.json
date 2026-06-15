@@ -18,9 +18,8 @@
     "react-error-boundary": "^6.0.0",
     "react-intersection-observer": "^10.0.0",
     "react-multi-carousel": "^2.8.6",
-    "react-parallax-tilt": "^1.7.315",
+    "react-parallax-tilt": "^1.7.331",
     "react-scripts": "5.0.1",
-    "react-tilt": "^0.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

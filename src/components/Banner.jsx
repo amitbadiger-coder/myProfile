@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { ArrowRight, Download } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ArrowRight} from 'lucide-react';
 import logo from '../assets/img/brand1.jpeg';
 import '../styles/Banner.css';
 

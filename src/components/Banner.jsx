@@ -20,21 +20,33 @@ const Banner = () => {
   const [delta, setDelta] = useState(120);
   const period = 2200;
 
-  useEffect(() => {
-    const ticker = setInterval(() => {
-      const i = loopNum % ROLES.length;
-      const fullText = ROLES[i];
-      const updated = isDeleting
-        ? fullText.substring(0, text.length - 1)
-        : fullText.substring(0, text.length + 1);
-      setText(updated);
-      if (isDeleting) setDelta(d => Math.max(d * 0.9, 40));
-      if (!isDeleting && updated === fullText) { setIsDeleting(true); setDelta(period); }
-      else if (isDeleting && updated === '') { setIsDeleting(false); setLoopNum(n => n + 1); setDelta(120); }
-    }, delta);
-    return () => clearInterval(ticker);
-  }, [text, delta]);
+ useEffect(() => {
+  const ticker = setInterval(() => {
+    const i = loopNum % ROLES.length;
+    const fullText = ROLES[i];
 
+    const updated = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text.length + 1);
+
+    setText(updated);
+
+    if (isDeleting) {
+      setDelta(d => Math.max(d * 0.9, 40));
+    }
+
+    if (!isDeleting && updated === fullText) {
+      setIsDeleting(true);
+      setDelta(period);
+    } else if (isDeleting && updated === '') {
+      setIsDeleting(false);
+      setLoopNum(n => n + 1);
+      setDelta(120);
+    }
+  }, delta);
+
+  return () => clearInterval(ticker);
+}, [text, delta, loopNum, isDeleting, period]);
   return (
     <section className="banner" id="home">
       {/* Background effects */}
